@@ -1,7 +1,6 @@
 # Sistema de Gestión Académica
 
 <div align="center">
-  <img src="https://via.placeholder.com/150?text=USP" alt="Logo Universidad San Pedro" width="150px"/>
   <br>
   <h3>Plataforma integral de gestión académica y matrícula</h3>
 </div>
