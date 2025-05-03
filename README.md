@@ -43,10 +43,10 @@ desaprueba cursos
 > 
 > ```bash
 > # Clonar el repositorio
-> git clone https://github.com/universidad-san-pedro/sistema-gestion-academica.git
+> git clone https://github.com/Yonsn76/san-pedro-Matriculas.git
 > 
 > # Navegar al directorio del proyecto
-> cd sistema-gestion-academica
+> cd san-pedro-Matriculas
 > 
 > # Instalar dependencias
 > npm install
