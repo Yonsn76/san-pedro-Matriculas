@@ -8,7 +8,7 @@ function NibelacionRecuperacion() {
          estudiantes que necesitan reforzar sus conocimientos.</p>
       <p>Nuestro objetivo es brindar las herramientas necesarias 
         para alcanzar el nivel académico esperado.</p>
-      
+        <p>Por el momento no contamos con cursos disponibles.</p>
     </div>
   );
 }
