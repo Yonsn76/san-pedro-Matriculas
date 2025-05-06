@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  color-scheme: light dark;
+}
+
 body {
   font-family: 'Inter', sans-serif;
+  @apply bg-white dark:bg-gray-900 min-h-screen;
+}
+
+html {
+  @apply bg-white dark:bg-gray-900;
 }
