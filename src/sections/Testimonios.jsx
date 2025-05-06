@@ -15,7 +15,7 @@ const testimonios = [
       imagen: "https://randomuser.me/api/portraits/women/65.jpg"
     },
   ]
-  
+
   const Testimonios = () => {
     return (
       <section className="py-16 bg-gray-100 dark:bg-gray-900">
@@ -24,7 +24,15 @@ const testimonios = [
           <div className="grid md:grid-cols-3 gap-8">
             {testimonios.map((t, idx) => (
               <div key={idx} className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow">
-                <img src={t.imagen} alt={t.nombre} className="w-20 h-20 mx-auto rounded-full mb-4" />
+                <img
+                  src={t.imagen}
+                  alt={t.nombre}
+                  className="w-20 h-20 mx-auto rounded-full mb-4"
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = `https://via.placeholder.com/150x150?text=${t.nombre.replace(/\s+/g, '+')}`;
+                  }}
+                />
                 <p className="text-gray-700 dark:text-gray-300 italic mb-2">"{t.frase}"</p>
                 <h4 className="text-blue-600 font-semibold">{t.nombre}</h4>
               </div>
@@ -34,6 +42,5 @@ const testimonios = [
       </section>
     )
   }
-  
+
   export default Testimonios
-  
