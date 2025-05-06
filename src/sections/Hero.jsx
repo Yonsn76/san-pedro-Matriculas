@@ -80,12 +80,22 @@ const Hero = () => {
             />
 
             {/* Contenido principal */}
-            <div className="relative z-10 flex items-center justify-center h-full px-4 text-center">
-                <div>
+            <div className="relative z-10 flex flex-col md:flex-row items-center h-full px-4 md:px-12 w-full">
+                {/* Escudo del colegio - ahora a la izquierda */}
+                <div className="flex items-center justify-center mb-8 md:mb-0 md:mr-12 lg:mr-16 md:flex-shrink-0">
+                    <img
+                        src="/escudo.png"
+                        alt="Escudo Colegio San Pedro"
+                        className="w-64 md:w-96 lg:w-[30rem] h-auto drop-shadow-xl transition-all duration-300 hover:scale-105"
+                    />
+                </div>
+
+                {/* Texto principal */}
+                <div className="text-center md:text-left">
                     <h1 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow">
                         Bienvenido al Colegio San Pedro
                     </h1>
-                    <p className="text-lg md:text-xl mb-6 max-w-2xl mx-auto drop-shadow">
+                    <p className="text-lg md:text-xl mb-6 max-w-2xl mx-auto md:mx-0 drop-shadow">
                         Explora, aprende y crece con nosotros en un entorno moderno e interactivo
                     </p>
                     <Link
