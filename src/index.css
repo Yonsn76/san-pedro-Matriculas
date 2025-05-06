@@ -3,14 +3,18 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: light dark;
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
 }
 
 body {
   font-family: 'Inter', sans-serif;
-  @apply bg-white dark:bg-gray-900 min-h-screen;
+  @apply bg-white dark:bg-gray-900 min-h-screen transition-colors duration-200;
 }
 
 html {
-  @apply bg-white dark:bg-gray-900;
+  @apply bg-white dark:bg-gray-900 transition-colors duration-200;
 }

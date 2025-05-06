@@ -1,8 +1,5 @@
 import { useCallback } from "react";
 import { Link } from "react-router-dom";
-import Particles from "react-tsparticles";
-import { loadFull } from "tsparticles";
-
 const Hero = () => {
     const particlesInit = useCallback(async (engine) => {
         await loadFull(engine);
@@ -24,61 +21,7 @@ const Hero = () => {
                 <div className="absolute inset-0 bg-black opacity-60" />
             </div>
 
-            {/* Partículas tipo burbuja */}
-            <Particles
-                id="tsparticles"
-                init={particlesInit}
-                className="absolute inset-0 z-0"
-                options={{
-                    fullScreen: false,
-                    background: { color: "transparent" },
-                    fpsLimit: 60,
-                    interactivity: {
-                        events: {
-                            onHover: {
-                                enable: true,
-                                mode: "bubble", // activa efecto burbuja
-                            },
-                            resize: true,
-                        },
-                        modes: {
-                            bubble: {
-                                distance: 200,
-                                size: 8,
-                                duration: 2,
-                                opacity: 0.8,
-                            },
-                        },
-                    },
-                    particles: {
-                        color: { value: "#ffffff" },
-                        links: {
-                            enable: false, // sin líneas
-                        },
-                        move: {
-                            enable: true,
-                            speed: 0.8,
-                            direction: "none",
-                            outModes: { default: "out" },
-                        },
-                        number: {
-                            value: 50,
-                            density: { enable: true, area: 800 },
-                        },
-                        opacity: {
-                            value: 0.2,
-                        },
-                        shape: {
-                            type: "circle",
-                        },
-                        size: {
-                            value: { min: 4, max: 10 },
-                        },
-                    },
-                    detectRetina: true,
-                }}
-            />
-
+        
             {/* Contenido principal */}
             <div className="relative z-10 flex items-center justify-center h-full px-4 w-full">
                 {/* Texto principal */}
