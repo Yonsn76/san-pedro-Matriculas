@@ -10,7 +10,7 @@ const Hero = () => {
             {/* Fondo de imagen con overlay oscuro */}
             <div className="absolute inset-0">
                 <img
-                    src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80"
+                    src="https://cdn.pixabay.com/photo/2024/09/20/03/56/teacher-9060280_1280.jpg"
                     alt="Estudiantes en el aula"
                     className="w-full h-full object-cover"
                     onError={(e) => {
@@ -21,7 +21,7 @@ const Hero = () => {
                 <div className="absolute inset-0 bg-black opacity-60" />
             </div>
 
-        
+
             {/* Contenido principal */}
             <div className="relative z-10 flex items-center justify-center h-full px-4 w-full">
                 {/* Texto principal */}

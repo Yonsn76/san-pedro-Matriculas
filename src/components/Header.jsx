@@ -1,18 +1,15 @@
-import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import { Menu, X } from 'lucide-react'
-import ThemeToggle from './ThemeToggle'
-import { useTheme } from '../context/ThemeContext'
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { Menu, X } from 'lucide-react';
+import ThemeToggle from './ThemeToggle';
+import { useTheme } from '../context/ThemeContext';
 
 const Header = () => {
-  const [open, setOpen] = useState(false)
-  const [textVisible, setTextVisible] = useState(0)
-  // Usamos el contexto de tema
+  const [open, setOpen] = useState(false);
+  const [textVisible, setTextVisible] = useState(0);
   const { theme } = useTheme();
 
-  // Agregar estilos al documento
   useEffect(() => {
-    // Crear elemento de estilo
     const style = document.createElement('style');
     style.textContent = `
       @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
@@ -41,19 +38,15 @@ const Header = () => {
       }
     `;
 
-    // Agregar al head
     document.head.appendChild(style);
 
-    // Limpiar al desmontar
     return () => {
       document.head.removeChild(style);
     };
   }, []);
 
-  // Efecto de escritura al cargar la página
   useEffect(() => {
     const fullText = "Colegio San Pedro";
-
     let currentIndex = 0;
     const interval = setInterval(() => {
       if (currentIndex <= fullText.length) {
@@ -70,12 +63,11 @@ const Header = () => {
   const navItems = [
     { name: 'Inicio', path: '/' },
     { name: 'Nosotros', path: '/#nosotros' },
-    { name: 'Matricula', path: '/matricula' },
+    { name: 'Matrícula', path: '/matricula' },
     { name: 'Consultas', path: '/#consultas' },
     { name: 'Contacto', path: '/#contacto' }
-  ]
+  ];
 
-  // Usamos el tema para aplicar clases condicionales
   const isDarkMode = theme === 'dark';
 
   return (
@@ -95,7 +87,9 @@ const Header = () => {
         </Link>
         <nav className={`hidden md:flex space-x-6 ${isDarkMode ? 'text-gray-100' : 'text-gray-700'}`}>
           {navItems.map(item => (
-            <Link to={item.path} key={item.name} className="hover:text-blue-500">{item.name}</Link>
+            <Link to={item.path} key={item.name} className="hover:text-blue-500 font-bold">
+              {item.name}
+            </Link>
           ))}
           <ThemeToggle />
         </nav>
@@ -109,12 +103,14 @@ const Header = () => {
       {open && (
         <div className={`md:hidden ${isDarkMode ? 'bg-gray-800 text-gray-100' : 'bg-white text-gray-700'} px-4 py-2 space-y-2`}>
           {navItems.map(item => (
-            <Link to={item.path} key={item.name} className="block hover:text-blue-500">{item.name}</Link>
+            <Link to={item.path} key={item.name} className="block hover:text-blue-500 font-bold">
+              {item.name}
+            </Link>
           ))}
         </div>
       )}
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
