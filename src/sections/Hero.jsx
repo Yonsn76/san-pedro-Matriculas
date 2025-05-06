@@ -1,5 +1,8 @@
 import { useCallback } from "react";
 import { Link } from "react-router-dom";
+import { TypeAnimation } from "react-type-animation";
+import { motion } from "framer-motion";
+
 const Hero = () => {
     const particlesInit = useCallback(async (engine) => {
         await loadFull(engine);
@@ -21,7 +24,6 @@ const Hero = () => {
                 <div className="absolute inset-0 bg-black opacity-60" />
             </div>
 
-
             {/* Contenido principal */}
             <div className="relative z-10 flex items-center justify-center h-full px-4 w-full">
                 {/* Texto principal */}
@@ -29,15 +31,29 @@ const Hero = () => {
                     <h1 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow">
                         Bienvenido al Colegio San Pedro
                     </h1>
-                    <p className="text-lg md:text-xl mb-6 max-w-2xl mx-auto drop-shadow">
-                        Explora, aprende y crece con nosotros en un entorno moderno e interactivo
-                    </p>
-                    <Link
-                        to="/matricula"
-                        className="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-full text-white font-semibold transition-all duration-300"
+                    <TypeAnimation
+                        sequence={[
+                            "Explora, aprende y crece con nosotros...",
+                            1000
+                        ]}
+                        wrapper="p"
+                        speed={50}
+                        repeat={Infinity}
+                        className="text-lg md:text-xl mb-6 max-w-2xl mx-auto drop-shadow"
+                    />
+
+                    {/* Botón con animación de latido */}
+                    <motion.div
+                        animate={{ scale: [1, 1.1, 1] }}
+                        transition={{ duration: 1.5, repeat: Infinity, repeatType: "reverse" }}
                     >
-                        ¡Matricúlate Ahora!
-                    </Link>
+                        <Link
+                            to="/matricula"
+                            className="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-full text-white font-semibold transition-all duration-300"
+                        >
+                            ¡Matricúlate Ahora!
+                        </Link>
+                    </motion.div>
                 </div>
             </div>
         </section>
