@@ -1,0 +1,50 @@
+/* Estilos para el efecto de escritura */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
+
+.cursive-text {
+  font-family: 'Dancing Script', cursive;
+  letter-spacing: 0.5px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Efecto de brillo para modo oscuro */
+.dark .cursive-text {
+  color: white;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ffdd00, 0 0 20px #ffdd00;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ffdd00, 0 0 20px #ffdd00;
+  }
+  to {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ffdd00, 0 0 40px #ffdd00;
+  }
+}
+
+/* Estilos para el efecto de escritura */
+
+/* Efecto para la imagen */
+.logo-image {
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.logo-image:hover {
+  transform: scale(1.1);
+}
+
+/* Efecto de brillo para el escudo en modo oscuro */
+.dark .logo-image {
+  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.5)) drop-shadow(0 0 5px rgba(255, 221, 0, 0.5));
+  animation: logoGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes logoGlow {
+  from {
+    filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.5)) drop-shadow(0 0 5px rgba(255, 221, 0, 0.5));
+  }
+  to {
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.7)) drop-shadow(0 0 10px rgba(255, 221, 0, 0.7));
+  }
+}
