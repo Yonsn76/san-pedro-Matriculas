@@ -80,8 +80,9 @@ const Hero = () => {
             />
 
             {/* Contenido principal */}
-            <div className="relative z-10 flex items-center justify-center h-full px-4 text-center">
-                <div>
+            <div className="relative z-10 flex items-center justify-center h-full px-4 w-full">
+                {/* Texto principal */}
+                <div className="text-center">
                     <h1 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow">
                         Bienvenido al Colegio San Pedro
                     </h1>
