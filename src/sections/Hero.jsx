@@ -29,7 +29,7 @@ const Hero = () => {
                 {/* Texto principal */}
                 <div className="text-center">
                     <h1 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow">
-                        Bienvenido al Colegio San Pedro
+                        Bienvenido a la escuela San Pedro
                     </h1>
                     <TypeAnimation
                         sequence={[
