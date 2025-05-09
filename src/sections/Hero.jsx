@@ -74,7 +74,7 @@ const Hero = () => {
             {/* Fondo de imagen con overlay oscuro */}
             <div className="absolute inset-0">
                 <img
-                    src="https://cdn.pixabay.com/photo/2024/09/20/03/56/teacher-9060280_1280.jpg"
+                    src="foto.jpg"
                     alt="Estudiantes en el aula"
                     className="w-full h-full object-cover"
                     onError={(e) => {
