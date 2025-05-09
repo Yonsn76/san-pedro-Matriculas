@@ -401,9 +401,9 @@ const Form = () => {
                     <div className="relative col-span-2">
                       <div className="flex items-center">
                         <Pencil className={`absolute left-4 ${styles.iconColor}`} size={18} />
-                        <input
-                          type="text"
-                          id="nombre"
+                      <input
+                        type="text"
+                        id="nombre"
                           className={`w-full pl-12 pr-4 py-3 border-2 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white peer transition-colors duration-200 ${
                             tipoMatricula === 'nuevo'
                               ? 'border-blue-200 focus:ring-blue-500 dark:focus:ring-blue-400'
@@ -411,9 +411,9 @@ const Form = () => {
                               ? 'border-green-200 focus:ring-green-500 dark:focus:ring-green-400'
                               : 'border-purple-200 focus:ring-purple-500 dark:focus:ring-purple-400'
                           }`}
-                          placeholder=" "
-                          required
-                        />
+                        placeholder=" "
+                        required
+                      />
                       </div>
                       <label
                         htmlFor="nombre"
@@ -427,9 +427,9 @@ const Form = () => {
                     <div className="relative">
                       <div className="flex items-center">
                         <Baby className={`absolute left-4 ${styles.iconColor}`} size={18} />
-                        <input
-                          type="text"
-                          id="dni"
+                      <input
+                        type="text"
+                        id="dni"
                           maxLength="8"
                           pattern="[0-9]{8}"
                           className={`w-full pl-12 pr-4 py-3 border-2 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white peer transition-colors duration-200 ${
@@ -439,9 +439,9 @@ const Form = () => {
                               ? 'border-green-200 focus:ring-green-500 dark:focus:ring-green-400'
                               : 'border-purple-200 focus:ring-purple-500 dark:focus:ring-purple-400'
                           }`}
-                          placeholder=" "
-                          required
-                        />
+                        placeholder=" "
+                        required
+                      />
                       </div>
                       <label
                         htmlFor="dni"
@@ -461,9 +461,9 @@ const Form = () => {
                     <div className="relative">
                       <div className="flex items-center">
                         <Calendar className={`absolute left-4 ${styles.iconColor}`} size={18} />
-                        <input
-                          type="date"
-                          id="fechaNacimiento"
+                      <input
+                        type="date"
+                        id="fechaNacimiento"
                           className={`w-full pl-12 pr-4 py-3 border-2 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition-colors duration-200 ${
                             tipoMatricula === 'nuevo'
                               ? 'border-blue-200 focus:ring-blue-500 dark:focus:ring-blue-400'
@@ -471,8 +471,8 @@ const Form = () => {
                               ? 'border-green-200 focus:ring-green-500 dark:focus:ring-green-400'
                               : 'border-purple-200 focus:ring-purple-500 dark:focus:ring-purple-400'
                           }`}
-                          required
-                        />
+                        required
+                      />
                       </div>
                       <label
                         htmlFor="fechaNacimiento"
@@ -492,8 +492,8 @@ const Form = () => {
                     <div className="relative col-span-2">
                       <div className="flex items-center">
                         <MapPin className={`absolute left-4 ${styles.iconColor}`} size={18} />
-                        <input
-                          type="text"
+                          <input
+                            type="text"
                           id="direccion"
                           className={`w-full pl-12 pr-4 py-3 border-2 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white peer transition-colors duration-200 ${
                             tipoMatricula === 'nuevo'
@@ -502,11 +502,11 @@ const Form = () => {
                               ? 'border-green-200 focus:ring-green-500 dark:focus:ring-green-400'
                               : 'border-purple-200 focus:ring-purple-500 dark:focus:ring-purple-400'
                           }`}
-                          placeholder=" "
-                          required
-                        />
+                            placeholder=" "
+                            required
+                          />
                       </div>
-                      <label
+                          <label
                         htmlFor="direccion"
                         className={`absolute text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-700 px-2 peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 left-1 ${
                           tipoMatricula === 'nuevo'
@@ -517,11 +517,11 @@ const Form = () => {
                         }`}
                       >
                         Dirección Completa
-                      </label>
-                    </div>
+                          </label>
+                        </div>
 
                     {/* Género */}
-                    <div className="relative">
+                        <div className="relative">
                       <div className="flex items-center">
                         <User className={`absolute left-4 ${styles.iconColor}`} size={18} />
                         <select
@@ -555,7 +555,7 @@ const Form = () => {
                     </div>
 
                     {/* Grado a cursar */}
-                    <div className="relative">
+                      <div className="relative">
                       <div className="flex items-center">
                         <GraduationCap className={`absolute left-4 ${styles.iconColor}`} size={18} />
                         <select
@@ -646,8 +646,8 @@ const Form = () => {
                         >
                           Colegio de Procedencia
                         </label>
-                      </div>
-                    )}
+                    </div>
+                  )}
                   </div>
                 </div>
               )}
@@ -665,9 +665,9 @@ const Form = () => {
                     <div className="relative col-span-2">
                       <div className="flex items-center">
                         <UserCircle className={`absolute left-4 ${styles.iconColor}`} size={18} />
-                        <input
-                          type="text"
-                          id="nombreApoderado"
+                      <input
+                        type="text"
+                        id="nombreApoderado"
                           className={`w-full pl-12 pr-4 py-3 border-2 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white peer transition-colors duration-200 ${
                             tipoMatricula === 'nuevo'
                               ? 'border-blue-200 focus:ring-blue-500 dark:focus:ring-blue-400'
@@ -675,9 +675,9 @@ const Form = () => {
                               ? 'border-green-200 focus:ring-green-500 dark:focus:ring-green-400'
                               : 'border-purple-200 focus:ring-purple-500 dark:focus:ring-purple-400'
                           }`}
-                          placeholder=" "
-                          required
-                        />
+                        placeholder=" "
+                        required
+                      />
                       </div>
                       <label
                         htmlFor="nombreApoderado"
@@ -691,9 +691,9 @@ const Form = () => {
                     <div className="relative">
                       <div className="flex items-center">
                         <Baby className={`absolute left-4 ${styles.iconColor}`} size={18} />
-                        <input
-                          type="text"
-                          id="dniApoderado"
+                      <input
+                        type="text"
+                        id="dniApoderado"
                           maxLength="8"
                           pattern="[0-9]{8}"
                           className={`w-full pl-12 pr-4 py-3 border-2 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white peer transition-colors duration-200 ${
@@ -703,9 +703,9 @@ const Form = () => {
                               ? 'border-green-200 focus:ring-green-500 dark:focus:ring-green-400'
                               : 'border-purple-200 focus:ring-purple-500 dark:focus:ring-purple-400'
                           }`}
-                          placeholder=" "
-                          required
-                        />
+                        placeholder=" "
+                        required
+                      />
                       </div>
                       <label
                         htmlFor="dniApoderado"
