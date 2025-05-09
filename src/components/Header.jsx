@@ -8,6 +8,31 @@ const Header = () => {
   const [open, setOpen] = useState(false);
   const [textVisible, setTextVisible] = useState(0);
   const { theme } = useTheme();
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      // Si estamos scrolleando hacia abajo y el header es visible
+      if (currentScrollY > lastScrollY && isVisible) {
+        setIsVisible(false);
+      }
+      // Si estamos scrolleando hacia arriba y el header está oculto
+      else if (currentScrollY < lastScrollY && !isVisible) {
+        setIsVisible(true);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [lastScrollY, isVisible]);
 
   useEffect(() => {
     const style = document.createElement('style');
@@ -71,6 +96,7 @@ const Header = () => {
   const isDarkMode = theme === 'dark';
 
   return (
+
     <header className={`bg-white ${isDarkMode ? 'dark:bg-gray-900' : ''} shadow-md sticky top-0 z-50`}>
       <div className="w-full px-4 py-3 flex items-center justify-between h-16">
         {/* Contenedor izquierdo (Logo y texto) */}
