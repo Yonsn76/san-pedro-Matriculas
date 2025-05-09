@@ -8,12 +8,12 @@ const ThemeToggle = () => {
   return (
     <button
       onClick={toggleTheme}
-      className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+      className="p-3 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
       aria-label={isDark ? "Cambiar a modo claro" : "Cambiar a modo oscuro"}
     >
       {isDark ?
-        <Sun className="text-yellow-400 hover:text-yellow-500" size={20} /> :
-        <Moon className="text-gray-700 dark:text-gray-300 hover:text-blue-500" size={20} />
+        <Sun className="text-yellow-400 hover:text-yellow-500" size={24} /> :
+        <Moon className="text-gray-700 dark:text-gray-300 hover:text-blue-500" size={24} />
       }
     </button>
   )

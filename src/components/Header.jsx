@@ -101,7 +101,7 @@ const Header = () => {
 
         {/* Botón de menú móvil */}
         <div className="md:hidden flex items-center gap-3">
-          <ThemeToggle />
+          
           <button onClick={() => setOpen(!open)} className={isDarkMode ? 'text-white' : 'text-gray-800'}>
             {open ? <X size={24} /> : <Menu size={24} />}
           </button>
