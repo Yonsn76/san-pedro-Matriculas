@@ -60,6 +60,6 @@ desaprueba cursos
 ---
 
 <div align="center">
-  <p>© 2024 Team San Pedro. Todos los derechos reservados.</p>
+  <p>© 2025 Team San Pedro. Todos los derechos reservados.</p>
 </div>
 
