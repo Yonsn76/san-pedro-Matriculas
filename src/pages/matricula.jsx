@@ -515,7 +515,7 @@ const Form = () => {
                             ? 'peer-focus:text-green-600 dark:peer-focus:text-green-400'
                             : 'peer-focus:text-purple-600 dark:peer-focus:text-purple-400'
                         }`}
-                      >
+                          >
                         Dirección Completa
                           </label>
                         </div>
