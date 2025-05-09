@@ -46,7 +46,7 @@ const Header = () => {
   }, []);
 
   useEffect(() => {
-    const fullText = "Colegio San Pedro";
+    const fullText = "Escuela San Pedro";
     let currentIndex = 0;
     const interval = setInterval(() => {
       if (currentIndex <= fullText.length) {
@@ -81,7 +81,7 @@ const Header = () => {
           />
           <div className="flex items-center">
             <span className={`text-3xl md:text-4xl font-extrabold ${isDarkMode ? 'text-white' : 'text-blue-600'} cursive-text leading-none`}>
-              {textVisible >= 0 ? "Colegio San Pedro".substring(0, Math.min(textVisible, 17)) : ""}
+              {textVisible >= 0 ? "Escuela San Pedro".substring(0, Math.min(textVisible, 17)) : ""}
             </span>
           </div>
         </Link>
