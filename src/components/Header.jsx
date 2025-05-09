@@ -97,7 +97,7 @@ const Header = () => {
 
   return (
 
-    <header className={`bg-white ${isDarkMode ? 'dark:bg-gray-900' : ''} shadow-md sticky top-0 z-50`}>
+    <header className={`bg-white ${isDarkMode ? 'dark:bg-gray-900' : ''} shadow-md sticky top-0 z-50 transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
       <div className="w-full px-4 py-3 flex items-center justify-between h-16">
         {/* Contenedor izquierdo (Logo y texto) */}
         <div className="flex items-center gap-3">
