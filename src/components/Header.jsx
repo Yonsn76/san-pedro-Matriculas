@@ -72,27 +72,34 @@ const Header = () => {
 
   return (
     <header className={`bg-white ${isDarkMode ? 'dark:bg-gray-900' : ''} shadow-md sticky top-0 z-50`}>
-      <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between h-16">
-        <Link to="/" className="flex items-center gap-3 group">
-          <img
-            src="/escudo.png"
-            alt="Escudo Colegio San Pedro"
-            className={`h-10 md:h-14 w-auto logo-image ${isDarkMode ? 'dark-logo' : ''}`}
-          />
-          <div className="flex items-center">
+      <div className="w-full px-4 py-3 flex items-center justify-between h-16">
+        {/* Contenedor izquierdo (Logo y texto) */}
+        <div className="flex items-center gap-3">
+          <Link to="/" className="flex items-center gap-3 group">
+            <img
+              src="/escudo.png"
+              alt="Escudo Colegio San Pedro"
+              className={`h-10 md:h-14 w-auto logo-image ${isDarkMode ? 'dark-logo' : ''}`}
+            />
             <span className={`text-3xl md:text-4xl font-extrabold ${isDarkMode ? 'text-white' : 'text-blue-600'} cursive-text leading-none`}>
               {textVisible >= 0 ? "Escuela San Pedro".substring(0, Math.min(textVisible, 17)) : ""}
             </span>
-          </div>
-        </Link>
-        <nav className={`hidden md:flex space-x-6 ${isDarkMode ? 'text-gray-100' : 'text-gray-700'}`}>
-          {navItems.map(item => (
-            <Link to={item.path} key={item.name} className="hover:text-blue-500 font-bold">
-              {item.name}
-            </Link>
-          ))}
+          </Link>
+        </div>
+
+        {/* Contenedor derecho (Menú de navegación) */}
+        <div className="flex items-center">
+          <nav className={`hidden md:flex space-x-6 ${isDarkMode ? 'text-gray-100' : 'text-gray-700'}`}>
+            {navItems.map(item => (
+              <Link to={item.path} key={item.name} className="hover:text-blue-500 font-bold">
+                {item.name}
+              </Link>
+            ))}
+          </nav>
           <ThemeToggle />
-        </nav>
+        </div>
+
+        {/* Botón de menú móvil */}
         <div className="md:hidden flex items-center gap-3">
           <ThemeToggle />
           <button onClick={() => setOpen(!open)} className={isDarkMode ? 'text-white' : 'text-gray-800'}>
