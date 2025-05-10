@@ -1,14 +1,10 @@
-import { useEffect, useRef, useCallback, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import gsap from "gsap";
 
 const Hero = () => {
-    const particlesInit = useCallback(async (engine) => {
-        await loadFull(engine);
-    }, []);
-
     const wordRefs = useRef([]);
     const [showTypeAnimation, setShowTypeAnimation] = useState(false);
     const [showButton, setShowButton] = useState(false);
@@ -18,75 +14,55 @@ const Hero = () => {
     };
 
     useEffect(() => {
-        const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+        const tl = gsap.timeline({ defaults: { ease: "elastic.out(1.5, 0.3)" } });
 
         wordRefs.current.forEach((el, i) => {
             tl.fromTo(
                 el,
-                { opacity: 0, rotate: 0, scale: 1.8 },
+                { opacity: 0, y: -50, scale: 0.5 },
                 {
                     opacity: 1,
-                    rotate: 360,
+                    y: 0,
                     scale: 1,
-                    duration: 1.7,
+                    duration: 1.5,
+                    ease: "elastic.out(1.5, 0.3)"
                 },
-                i * 0.8
+                i * 0.5
             );
         });
-
-        // pausa después de la animación 
-        tl.to({}, { duration: 0.3 }); 
 
         tl.call(() => {
             setShowTypeAnimation(true);
 
-            // Mostrar el botón después del texto
             setTimeout(() => {
                 setShowButton(true);
             }, 2000);
         });
     }, []);
 
-    const handleMouseEnter = (el) => {
-        gsap.to(el, {
-            scale: 1.1,
-            color: "#ff6347",
-            rotate: 10,
-            duration: 0.2,
-            ease: "power2.out",
-        });
-    };
-
-    const handleMouseLeave = (el) => {
-        gsap.to(el, {
-            scale: 1,
-            color: "#ffffff",
-            rotate: 0,
-            duration: 0.3,
-            ease: "power2.out",
-        });
-    };
-
     const titleWords = "Bienvenido a la escuela San Pedro".split(" ");
+    const colors = ["#ff5733", "#33ff57", "#5733ff", "#ff33a1", "#33a1ff", "#a1ff33"];
+
+    const handleHover = (el, index, enter) => {
+        gsap.to(el, {
+            scale: enter ? 1.1 : 1,
+            y: enter ? -10 : 0,
+            duration: 0.3,
+            color: enter ? colors[index % colors.length] : "#ffffff",
+        });
+    };
 
     return (
         <section className="relative h-[90vh] w-full text-white">
-            {/* Fondo de imagen con overlay oscuro */}
             <div className="absolute inset-0">
                 <img
                     src="foto.jpg"
                     alt="Estudiantes en el aula"
                     className="w-full h-full object-cover"
-                    onError={(e) => {
-                        e.target.onerror = null;
-                        e.target.src =
-                            "https://via.placeholder.com/1950x1080?text=Colegio+San+Pedro";
-                    }}
                 />
                 <div className="absolute inset-0 bg-black opacity-60" />
             </div>
 
-            {/* Contenido principal */}
             <div className="relative z-10 flex items-center justify-center h-full px-4 w-full">
                 <div className="text-center">
                     <h1 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow flex flex-wrap justify-center gap-4">
@@ -94,9 +70,9 @@ const Hero = () => {
                             <span
                                 key={index}
                                 ref={(el) => setWordRef(el, index)}
-                                className="inline-block cursor-pointer transition-transform"
-                                onMouseEnter={(e) => handleMouseEnter(e.target)}
-                                onMouseLeave={(e) => handleMouseLeave(e.target)}
+                                onMouseEnter={() => handleHover(wordRefs.current[index], index, true)}
+                                onMouseLeave={() => handleHover(wordRefs.current[index], index, false)}
+                                className="inline-block cursor-pointer"
                             >
                                 {word}
                             </span>
