@@ -18,3 +18,4 @@ body {
 html {
   @apply bg-white dark:bg-gray-900 transition-colors duration-200;
 }
+
