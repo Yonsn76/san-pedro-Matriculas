@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
 import { useTheme } from '../context/ThemeContext';
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -14,7 +15,6 @@ const Header = () => {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      
       // Si estamos scrolleando hacia abajo y el header es visible
       if (currentScrollY > lastScrollY && isVisible) {
         setIsVisible(false);
@@ -85,18 +85,35 @@ const Header = () => {
     return () => clearInterval(interval);
   }, []);
 
+  const navigate = useNavigate();
+
+  const handleNavigation = (path) => {
+    if (path.startsWith("#")) {
+      navigate("/"); // Primero navega a la página principal
+      setTimeout(() => {
+        const sectionId = path.slice(1);
+        const section = document.getElementById(sectionId);
+        if (section) {
+          section.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100); // Espera un poco para que el DOM cargue la sección
+    } else {
+      navigate(path);
+    }
+  };
+
   const navItems = [
-    { name: 'Inicio', path: '/' },
-    { name: 'Nosotros', path: '/#nosotros' },
-    { name: 'Matrícula', path: '/matricula' },
-    { name: 'Consultas', path: '/#consultas' },
-    { name: 'Contacto', path: '/#contacto' }
+    { name: "Inicio", path: "/" },
+    { name: "Nosotros", path: "#nosotros" },
+    { name: "Matrícula", path: "/matricula" },
+    { name: "Consultas", path: "#consulta" },
+    { name: "Artículos", path: "#articulos" },
+    { name: "Contacto", path: "#contacto" },
   ];
 
   const isDarkMode = theme === 'dark';
 
   return (
-
     <header className={`bg-white ${isDarkMode ? 'dark:bg-gray-900' : ''} shadow-md sticky top-0 z-50 transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
       <div className="w-full px-4 py-3 flex items-center justify-between h-16">
         {/* Contenedor izquierdo (Logo y texto) */}
@@ -116,18 +133,21 @@ const Header = () => {
         {/* Contenedor derecho (Menú de navegación) */}
         <div className="flex items-center">
           <nav className={`hidden md:flex space-x-6 ${isDarkMode ? 'text-gray-100' : 'text-gray-700'}`}>
-            {navItems.map(item => (
-              <Link to={item.path} key={item.name} className="hover:text-blue-500 font-bold">
+            {navItems.map((item) => (
+              <button
+                key={item.name}
+                onClick={() => handleNavigation(item.path)}
+                className="hover:text-blue-500 font-bold"
+              >
                 {item.name}
-              </Link>
+              </button>
             ))}
           </nav>
           <ThemeToggle />
         </div>
-
         {/* Botón de menú móvil */}
         <div className="md:hidden flex items-center gap-3">
-          
+
           <button onClick={() => setOpen(!open)} className={isDarkMode ? 'text-white' : 'text-gray-800'}>
             {open ? <X size={24} /> : <Menu size={24} />}
           </button>

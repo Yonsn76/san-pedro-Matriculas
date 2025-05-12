@@ -1,4 +1,5 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useLocation } from 'react-router-dom'
+import { useEffect } from 'react'
 import Header from './components/Header'
 import Hero from './sections/Hero'
 import ConsultasGrid from './sections/ConsultasGrid'
@@ -12,6 +13,11 @@ import NibelacionRecuperacion from './pages/Nibelacion-recuperacion'
 import CursosVacacionales from './pages/Cursos-Vacacionales'
 
 const App = () => {
+  const location = useLocation()
+  useEffect(() => {
+    window.scrollTo(0, 0); 
+  }, [location.pathname]); 
+
   return (
     <Routes>
       <Route path="/matricula" element={<Form />} />

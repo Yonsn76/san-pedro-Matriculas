@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 const MatriculaSection = () => {
     return (
-      <section id="matricula" className="bg-white dark:bg-gray-800 py-16">
+      <section id="consulta" className="bg-white dark:bg-gray-800 py-16">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-10 items-center px-4">
           <img
             src="https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
