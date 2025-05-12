@@ -27,7 +27,7 @@ const blog = [
 
   const Blog = () => {
     return (
-      <section className="py-16 bg-white dark:bg-gray-800">
+      <section id="articulos" className="py-16 bg-white dark:bg-gray-800">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-blue-600 dark:text-blue-400 mb-10">Últimos Artículos</h2>
           <div className="grid md:grid-cols-3 gap-8">
