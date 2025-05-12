@@ -2,7 +2,7 @@ const consultas = [
   {
     title: "¿Quiénes somos?",
     author: "Dirección Académica",
-    img: "https://images.unsplash.com/photo-1577896851231-70ef18881754",
+    img: "foto.jpg",
     link: "/quienes-somos",
     description:
       "Con más de 80 años al servicio de la educación, somos una institución que forma ciudadanos con valores, pensamiento crítico y compromiso social.",
@@ -10,7 +10,7 @@ const consultas = [
   {
     title: "Servicios Educativos",
     author: "Coordinación General",
-    img: "https://images.unsplash.com/photo-1601933470928-c6f080790f36",
+    img: "Padres.jpg",
     link: "/servicios",
     description:
       "Ofrecemos programas académicos complementados con actividades extracurriculares, talleres de arte, deporte y tecnología.",
@@ -18,7 +18,7 @@ const consultas = [
   {
     title: "Año académico",
     author: "Secretaría Escolar",
-    img: "https://images.unsplash.com/photo-1601987077600-dc8c7f7f7967",
+    img: "Vacaciones.jpg",
     link: "/ano-academico",
     description:
       "Consulta nuestro calendario escolar con fechas importantes: inicio de clases, evaluaciones, vacaciones y eventos institucionales.",
@@ -57,10 +57,7 @@ const ConsultasGrid = () => {
                   className="w-full h-48 object-cover"
                   onError={(e) => {
                     e.target.onerror = null;
-                    e.target.src = `https://via.placeholder.com/800x400?text=${item.title.replace(
-                      /\s+/g,
-                      "+"
-                    )}`;
+                    e.target.src = "/images/default.jpg"; // Reemplaza con una imagen de respaldo en tu proyecto
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>

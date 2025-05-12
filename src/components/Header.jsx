@@ -103,7 +103,7 @@ const Header = () => {
   };
 
   const navItems = [
-    { name: "Inicio", path: "/" },
+    { name: "Inicio", path: "#inicio" },
     { name: "Nosotros", path: "#nosotros" },
     { name: "Matrícula", path: "/matricula" },
     { name: "Consultas", path: "#consulta" },
