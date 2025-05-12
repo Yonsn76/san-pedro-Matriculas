@@ -53,7 +53,7 @@ const Hero = () => {
     };
 
     return (
-        <section className="relative h-[90vh] w-full text-white">
+        <section id="inicio" className="relative h-[90vh] w-full text-white">
             <div className="absolute inset-0">
                 <img
                     src="foto.jpg"
