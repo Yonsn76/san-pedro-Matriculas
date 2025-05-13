@@ -16,7 +16,13 @@ const MatriculaSection = () => {
             Consulta tu Matrícula
           </h2>
           <p className="text-gray-700 dark:text-gray-300 mb-4">Verifica si ya estás registrado en nuestra base de datos. Evita duplicados y asegura tu cupo.</p>
-          <Link to="/matricula" className="text-blue-600 font-semibold underline">Haz tu consulta aquí</Link>
+          <button 
+            onClick={() => document.querySelector('.chatbot2-toggle-button-fullsize')?.click()} 
+            className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full shadow-lg transform transition-transform duration-300 hover:scale-105 flex items-center justify-center gap-2"
+          >
+            <span>Haz tu consulta aquí</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+          </button>
         </div>
       </div>
     </section>

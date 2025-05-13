@@ -156,8 +156,8 @@ const ApoderadoForm = ({ formData, handleInputChange, tipoMatricula, errors, tou
                 disabled={buscando || !formData.dniApoderado || formData.dniApoderado.length !== 8}
                 className={`h-[42px] px-4 py-2 rounded-lg font-medium transition-colors ${
                   buscando || !formData.dniApoderado || formData.dniApoderado.length !== 8
-                    ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                    : `bg-${themeColors.text} text-white hover:bg-${themeColors.textDark}`
+                    ? 'bg-emerald-300 text-gray-500 cursor-not-allowed'
+                    : `bg-emerald-500 text-white hover:bg-emerald-700`
                 }`}
               >
                 {buscando ? (

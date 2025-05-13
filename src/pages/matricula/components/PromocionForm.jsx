@@ -123,6 +123,7 @@ const PromocionForm = ({ formData, handleInputChange, tipoMatricula, errors, tou
               maxLength={8}
               pattern="[0-9]{8}"
               placeholder="Ingrese el DNI para buscar"
+              className={`border-${themeColors.border} focus:border-${themeColors.primary} focus:ring-${themeColors.focus}`}
             />
           </div>
           <div className="pt-6">
@@ -132,8 +133,8 @@ const PromocionForm = ({ formData, handleInputChange, tipoMatricula, errors, tou
               disabled={buscando || !dniBusqueda || dniBusqueda.length !== 8}
               className={`h-[42px] px-4 py-2 rounded-lg font-medium transition-colors ${
                 buscando || !dniBusqueda || dniBusqueda.length !== 8
-                  ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                  : `bg-${themeColors.text} text-white hover:bg-${themeColors.textDark}`
+                  ? 'bg-violet-300 text-gray-500 cursor-not-allowed'
+                  : `bg-violet-500 text-white hover:bg-violet-700`
               }`}
             >
               {buscando ? (

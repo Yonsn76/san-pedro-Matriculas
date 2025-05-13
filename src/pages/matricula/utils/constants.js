@@ -12,10 +12,10 @@ export const MATRICULA_TYPES = {
 // Colores por tipo de matrícula
 export const THEME_COLORS = {
   [MATRICULA_TYPES.NUEVA]: {
-    primary: '#4f46e5', // indigo-600
-    secondary: '#818cf8', // indigo-400
-    light: '#eef2ff', // indigo-50
-    dark: '#3730a3', // indigo-800
+    primary: '#4f46e5', // azul (indigo-600)
+    secondary: '#818cf8', // azul claro (indigo-400)
+    light: '#eef2ff', // azul muy claro (indigo-50)
+    dark: '#3730a3', // azul oscuro (indigo-800)
     gradient: 'from-indigo-600 to-blue-500',
     border: 'border-indigo-200',
     hover: 'hover:bg-indigo-700',
@@ -26,32 +26,32 @@ export const THEME_COLORS = {
     bgDark: 'bg-indigo-900'
   },
   [MATRICULA_TYPES.TRASLADO]: {
-    primary: '#0d9488', // teal-600
-    secondary: '#2dd4bf', // teal-400
-    light: '#f0fdfa', // teal-50
-    dark: '#115e59', // teal-800
-    gradient: 'from-teal-600 to-emerald-500',
-    border: 'border-teal-200',
-    hover: 'hover:bg-teal-700',
-    focus: 'focus:ring-teal-500',
-    text: 'text-teal-600',
-    textDark: 'text-teal-800',
-    bgLight: 'bg-teal-50',
-    bgDark: 'bg-teal-900'
+    primary: '#10b981', // verde (emerald-500)
+    secondary: '#34d399', // verde claro (emerald-400)
+    light: '#ecfdf5', // verde muy claro (emerald-50)
+    dark: '#065f46', // verde oscuro (emerald-800)
+    gradient: 'from-emerald-600 to-green-500',
+    border: 'border-emerald-200',
+    hover: 'hover:bg-emerald-700',
+    focus: 'focus:ring-emerald-500',
+    text: 'text-emerald-600',
+    textDark: 'text-emerald-800',
+    bgLight: 'bg-emerald-50',
+    bgDark: 'bg-emerald-900'
   },
   [MATRICULA_TYPES.SIGUIENTE_GRADO]: {
-    primary: '#d97706', // amber-600
-    secondary: '#fbbf24', // amber-400
-    light: '#fffbeb', // amber-50
-    dark: '#92400e', // amber-800
-    gradient: 'from-amber-500 to-orange-400',
-    border: 'border-amber-200',
-    hover: 'hover:bg-amber-700',
-    focus: 'focus:ring-amber-500',
-    text: 'text-amber-600',
-    textDark: 'text-amber-800',
-    bgLight: 'bg-amber-50',
-    bgDark: 'bg-amber-900'
+    primary: '#8b5cf6', // morado (violet-500)
+    secondary: '#a78bfa', // morado claro (violet-400)
+    light: '#f5f3ff', // morado muy claro (violet-50)
+    dark: '#5b21b6', // morado oscuro (violet-800)
+    gradient: 'from-violet-600 to-purple-500',
+    border: 'border-violet-200',
+    hover: 'hover:bg-violet-700',
+    focus: 'focus:ring-violet-500',
+    text: 'text-violet-600',
+    textDark: 'text-violet-800',
+    bgLight: 'bg-violet-50',
+    bgDark: 'bg-violet-900'
   }
 };
 
