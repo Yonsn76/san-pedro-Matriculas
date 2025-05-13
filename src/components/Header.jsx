@@ -131,8 +131,8 @@ const Header = () => {
         </div>
 
         {/* Contenedor derecho (Menú de navegación) */}
-        <div className="flex items-center">
-          <nav className={`hidden md:flex space-x-6 ${isDarkMode ? 'text-gray-100' : 'text-gray-700'}`}>
+        <div className="hidden md:flex items-center space-x-4">
+          <nav className={`${isDarkMode ? 'text-gray-100' : 'text-gray-700'} flex space-x-6`}>
             {navItems.map((item) => (
               <button
                 key={item.name}
@@ -145,12 +145,13 @@ const Header = () => {
           </nav>
           <ThemeToggle />
         </div>
+       
         {/* Botón de menú móvil */}
         <div className="md:hidden flex items-center gap-3">
-
           <button onClick={() => setOpen(!open)} className={isDarkMode ? 'text-white' : 'text-gray-800'}>
             {open ? <X size={24} /> : <Menu size={24} />}
           </button>
+          <ThemeToggle />
         </div>
       </div>
       {open && (
