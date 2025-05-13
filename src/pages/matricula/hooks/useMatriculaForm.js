@@ -66,7 +66,11 @@ const useMatriculaForm = (tipoMatricula) => {
 
   // Reiniciar el formulario cuando cambia el tipo de matrícula
   useEffect(() => {
-    resetForm();
+    // No resetear automáticamente si hay datos guardados en localStorage
+    const savedFormData = localStorage.getItem('matricula_form_data');
+    if (!savedFormData) {
+      resetForm();
+    }
   }, [tipoMatricula]);
 
   // Actualizar grado siguiente automáticamente
@@ -81,6 +85,14 @@ const useMatriculaForm = (tipoMatricula) => {
       }
     }
   }, [tipoMatricula, formData.gradoActual]);
+
+  /**
+   * Establece directamente los datos del formulario
+   * @param {Object} data - Datos del formulario
+   */
+  const setFormDataDirectly = (data) => {
+    setFormData(data);
+  };
 
   /**
    * Maneja cambios en los campos del formulario
@@ -425,7 +437,8 @@ const useMatriculaForm = (tipoMatricula) => {
     submitForm,
     consultarMatricula,
     resetForm,
-    validateForm
+    validateForm,
+    setFormDataDirectly
   };
 };
 
