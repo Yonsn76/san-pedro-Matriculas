@@ -39,7 +39,9 @@ const ConsultasGrid = () => {
   return (
     <section id="nosotros" className="py-16 bg-gray-100 dark:bg-gray-900">
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center text-blue-600 dark:text-blue-400 mb-10">
+        <h2 className="text-6xl font-bold text-center text-blue-600 dark:text-blue-400 mb-10
+        transition-transform duration-300 transform hover:scale-110"
+          style={{ fontFamily: "'Dancing Script', cursive" }}>
           Nosotros
         </h2>
         <div className="grid md:grid-cols-3 gap-8">
@@ -57,7 +59,7 @@ const ConsultasGrid = () => {
                   className="w-full h-48 object-cover"
                   onError={(e) => {
                     e.target.onerror = null;
-                    e.target.src = "/images/default.jpg"; // Reemplaza con una imagen de respaldo en tu proyecto
+                    e.target.src = "/images/default.jpg"; // imagen de respaldo
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>

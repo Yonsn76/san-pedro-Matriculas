@@ -65,7 +65,9 @@ const Hero = () => {
 
             <div className="relative z-10 flex items-center justify-center h-full px-4 w-full">
                 <div className="text-center">
-                    <h1 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow flex flex-wrap justify-center gap-4">
+                    <h1 className="text-6xl md:text-8xl font-bold mb-4 drop-shadow flex flex-wrap justify-center gap-4"
+                    style={{ fontFamily: "'Dancing Script', cursive" }}
+                    >
                         {titleWords.map((word, index) => (
                             <span
                                 key={index}
@@ -73,6 +75,7 @@ const Hero = () => {
                                 onMouseEnter={() => handleHover(wordRefs.current[index], index, true)}
                                 onMouseLeave={() => handleHover(wordRefs.current[index], index, false)}
                                 className="inline-block cursor-pointer"
+                                style={{ color: "#fff8dc" }} // <-- aquí
                             >
                                 {word}
                             </span>
