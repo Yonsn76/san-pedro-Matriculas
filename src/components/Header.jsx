@@ -145,7 +145,7 @@ const Header = () => {
           </nav>
           <ThemeToggle />
         </div>
-       
+
         {/* Botón de menú móvil */}
         <div className="md:hidden flex items-center gap-3">
           <button onClick={() => setOpen(!open)} className={isDarkMode ? 'text-white' : 'text-gray-800'}>
@@ -154,12 +154,20 @@ const Header = () => {
           <ThemeToggle />
         </div>
       </div>
+
       {open && (
         <div className={`md:hidden ${isDarkMode ? 'bg-gray-800 text-gray-100' : 'bg-white text-gray-700'} px-4 py-2 space-y-2`}>
           {navItems.map(item => (
-            <Link to={item.path} key={item.name} className="block hover:text-blue-500 font-bold">
+            <button
+              key={item.name}
+              onClick={() => {
+                handleNavigation(item.path);
+                setOpen(false); 
+              }}
+              className="block w-full text-left hover:text-blue-500 font-bold"
+            >
               {item.name}
-            </Link>
+            </button>
           ))}
         </div>
       )}
