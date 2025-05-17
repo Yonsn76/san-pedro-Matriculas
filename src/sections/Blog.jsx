@@ -36,7 +36,7 @@ const blog = [
 
 const Blog = () => {
   return (
-    <section id="articulos" className="py-16 bg-white dark:bg-gray-900">
+    <section id="articulos" className="py-16 bg-white dark:bg-gray-800 py-16">
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="text-5xl font-bold text-center text-blue-600 dark:text-blue-400 mb-10
         transition-transform duration-300 transform hover:scale-110"
