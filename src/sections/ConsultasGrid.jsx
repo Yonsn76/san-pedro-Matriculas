@@ -37,7 +37,7 @@ const getHoverShadowClass = (idx) => {
 
 const ConsultasGrid = () => {
   return (
-    <section id="nosotros" className="py-16 bg-gray-100 dark:bg-gray-900">
+    <section id="nosotros" className="py-16 bg-gray-200 dark:bg-gray-900">
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="text-6xl font-bold text-center text-blue-600 dark:text-blue-400 mb-10
         transition-transform duration-300 transform hover:scale-110"

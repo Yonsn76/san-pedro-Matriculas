@@ -12,6 +12,7 @@
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
     "@hookform/resolvers": "^3.3.2",
+    "axios": "^1.9.0",
     "canvas-confetti": "^1.9.3",
     "framer-motion": "^10.16.4",
     "gsap": "^3.12.2",
